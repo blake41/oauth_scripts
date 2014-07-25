@@ -1,5 +1,5 @@
 require 'twitter'
-require 'debugger'
+require 'pry'
 
 client = Twitter::REST::Client.new do |config|
   config.consumer_key        = ENV["CONSUMER_KEY"]
@@ -9,5 +9,4 @@ client = Twitter::REST::Client.new do |config|
 end
 
 tweets = client.home_timeline
-debugger
-puts 'hi'
+binding.pry
